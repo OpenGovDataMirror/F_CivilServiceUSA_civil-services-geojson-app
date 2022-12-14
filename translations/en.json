@@ -1,0 +1,75 @@
+{
+  "menu": {
+    "geojson": {
+      "app_menu": "GeoJSON",
+      "about_geojson": "About GeoJSON",
+      "view_license": "View License",
+      "view_open_source": "View Open Source Project",
+      "version": "Version",
+      "quit": "Quit"
+    },
+    "file": {
+      "app_menu": "File",
+      "open": "Open"
+    },
+    "edit": {
+      "app_menu": "Edit",
+      "cut": "Cut",
+      "copy": "Copy",
+      "paste": "Paste",
+      "select_all": "Select All"
+    },
+    "view": {
+      "app_menu": "View",
+      "reload": "Reload",
+      "toggle_full_screen": "Toggle Full Screen",
+      "toggle_developer_tools": "Toggle Developer Tools"
+    },
+    "theme": {
+      "app_menu": "Theme",
+      "dark": "Dark",
+      "light": "Light",
+      "outdoors": "Outdoors",
+      "satellite": "Satellite",
+      "streets": "Streets",
+      "hybrid": "Hybrid"
+    },
+    "window": {
+      "app_menu": "Window",
+      "minimize": "Minimize",
+      "close": "Close",
+      "reset_app": "Reset App"
+    }
+  },
+  "dialog": {
+    "reset_app": {
+      "title": "Confirm",
+      "message": "Reset GeoJSON ?",
+      "detail": "This will reset GeoJSON to it's Default Settings as if you installed it for the first time."
+    }
+  },
+  "buttons": {
+    "yes": "Yes",
+    "no": "No",
+    "inspect": "inspect"
+  },
+  "errors": {
+    "invalid_mapbox_access_token": "Invalid Mapbox Access Token",
+    "not_geojson_file": "Invalid GeoJSON file",
+    "mapbox_failure": "Mapbox Error:"
+  },
+  "page": {
+    "placeholder": "Enter Your Mapbox Access Token",
+    "go_button": "GO",
+    "get_access_token": "Get My Mapbox Access Token",
+    "init_map": "Initializing Map ...",
+    "created_by": "Created by Civil Services",
+    "built_with": "Built with:",
+    "drawer_header_title": "Details",
+    "get_started_title": "Welcome",
+    "get_started_message": "Open a GeoJSON file using any of the following methods to get started:",
+    "get_started_method_1": "File &rsaquo; Open",
+    "get_started_method_2": "Drag &amp; Drop",
+    "get_started_method_3": "Command Line"
+  }
+}

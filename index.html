@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>GeoJSON</title>
+
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Ubuntu+Mono" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css" rel="stylesheet">
+        <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.32.1/mapbox-gl.css' rel='stylesheet' />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+        <link href="resources/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <div id="loading" class="fullscreen">
+            <div id="loading-image-wrapper" class="animated fadeIn">
+                <img id="loading-image" src="resources/icon.png">
+            </div>
+        </div>
+
+        <div id="drop-zone" class="fullscreen animated fadeIn">
+            <div class="drop-zone-icon">
+                <i class="fa fa-arrow-circle-o-up"></i>
+            </div>
+        </div>
+
+        <div id="error" class="animated fadeInDown">
+            <div id="error-message"></div>
+            <a id="close-error">
+                <i class="fa fa-times-circle"></i>
+            </a>
+        </div>
+
+        <div id="enter-token" class="fullscreen">
+            <div id="data-entry" class="fullscreen">
+                <div id="text-wrapper">
+                    <input type="text" name="token" id="token">
+                    <button id="submit-token"></button>
+                </div>
+                <div><a href="#" id="get-access-token"></a></div>
+            </div>
+            <div id="footer">
+                <div id="built-with">
+                    <div id="built-with-label"></div>
+                    <div>
+                        <a href="#" id="built-with-mapbox"></a>
+                        <a href="#" id="built-with-electron"></a>
+                    </div>
+                </div>
+                <div id="built-by">
+                    <a href="#" id="powered-by"></a>
+                </div>
+            </div>
+        </div>
+
+        <div id="progress">
+            <div id="progress-bar"></div>
+        </div>
+
+        <div id="get-started" class="animated flipInY">
+            <h1 id="get-started-title"></h1>
+            <p id="get-started-message"></p>
+            <ol>
+                <li id="get-started-method-1"></li>
+                <li id="get-started-method-2"></li>
+                <li id="get-started-method-3"></li>
+            </ol>
+        </div>
+
+        <div id="map" class="fullscreen"></div>
+
+        <div id="drawer">
+            <div id="drawer-header">
+                <h1 id="drawer-header-title"></h1>
+                <a id="drawer-close" href="#">
+                    <i class="fa fa-times-circle"></i>
+                </a>
+            </div>
+            <div id="drawer-content" class="scrollbar"></div>
+        </div>
+
+        <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v0.32.1/mapbox-gl.js"></script>
+        <script>require('./renderer.js')</script>
+        <script>
+          const {BrowserWindow} = require('electron').remote
+          let focusedWindow = BrowserWindow.getFocusedWindow()
+
+          window.onerror = function(error, url, line) {
+            focusedWindow.webContents.send('window-error', {
+              error: error,
+              url: url,
+              line: line
+            })
+          };
+        </script>
+    </body>
+</html>
